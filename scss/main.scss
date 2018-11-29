@@ -106,9 +106,14 @@ body {
   text-align: center;
   line-height: 50px;
   width: 35%;
+  border: 1px solid red;
 
   &:first-child {
     width: 30%;
+  }
+
+  &:last-child {
+    flex-basis: 90px;
   }
 }
 

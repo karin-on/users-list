@@ -10,6 +10,7 @@ class List extends React.Component {
                     <div className="list-header__item list-header__nickname">nickname</div>
                     <div className="list-header__item list-header__email">email</div>
                     <div className="list-header__item list-header__ip-address">IP address</div>
+                    <div className="list-header__item list-header__delete">delete</div>
                 </div>
 
                 <ul className="list__items">
