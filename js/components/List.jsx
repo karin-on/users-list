@@ -34,10 +34,11 @@ class List extends React.Component {
                             <div className="item item__ip-address">IP address 4353:43434</div>
                         </div>
                     </li>
-
-
-
                 </ul>
+
+                <button className="btn remove-all-btn">
+                    Remove list
+                </button>
 
             </div>
         </section>

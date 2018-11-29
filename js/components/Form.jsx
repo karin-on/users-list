@@ -27,7 +27,7 @@ class Form extends React.Component {
                     <div className="input-box"><input className="input" type="text" id="ip" placeholder="IP address"/></div>
                 </div>
 
-                <button className="submit-btn" type="submit" disabled={true}>Add</button>
+                <button className="btn submit-btn" type="submit" disabled={true}>Add</button>
             </form>
         </section>
 
