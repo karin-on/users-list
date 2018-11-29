@@ -19,6 +19,8 @@ class List extends React.Component {
                             <div className="item item__nickname">jakiś nickname</div>
                             <div className="item item__email">email@email.ok</div>
                             <div className="item item__ip-address">IP address 4353:43434</div>
+                            <div className="item item__delete">delete user</div>
+
                         </div>
                     </li>
                     <li className="list_item">
@@ -26,6 +28,8 @@ class List extends React.Component {
                             <div className="item item__nickname">jakiś nickname</div>
                             <div className="item item__email">email@email.ok</div>
                             <div className="item item__ip-address">IP address 4353:43434</div>
+                            <div className="item item__delete">delete user</div>
+
                         </div>
                     </li>
                     <li className="list_item">
@@ -33,6 +37,7 @@ class List extends React.Component {
                             <div className="item item__nickname">jakiś nickname</div>
                             <div className="item item__email">email@email.ok</div>
                             <div className="item item__ip-address">IP address 4353:43434</div>
+                            <div className="item item__delete">delete user</div>
                         </div>
                     </li>
                 </ul>
