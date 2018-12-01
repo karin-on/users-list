@@ -1,17 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../scss/main.scss';
-import {Form} from './components/Form.jsx';
-import {List} from './components/List.jsx';
-
-class Main extends React.Component {
-    render() {
-        return <div>
-            <Form />
-            <List />
-        </div>
-    }
-}
+import {Main} from './components/Main.jsx';
 
 class App extends React.Component {
     render() {
