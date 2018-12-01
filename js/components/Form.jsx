@@ -1,24 +1,48 @@
 import React from 'react';
 
 class Form extends React.Component {
-
-    handleChange = (e, str) => {
-        if (typeof this.props.getData === 'function') {
-            this.props.getData(e.target.value, str);
+    constructor(props) {
+        super(props);
+        this.state = {
+            nickname: '',
+            email: '',
+            ip: ''
         }
     }
 
+    handleChange = (e, input) => {
+        this.setState({
+            [input]: e.target.value
+        });
+        this.validateForm(input, e.target.value);
+    }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    validateForm = (input, value) => {
+        // e.preventDefault();
 
-        console.log('dziala');
+        const data = {
+            [input]: value
+        }
+
+
+        console.log(data);
     }
 
 
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //
+    //     if (typeof this.props.validateForm === 'function') {
+    //         this.props.validateForm();
+    //     }
+    // }
+
+
     render() {
+        // console.log(this.state);
+
         return <section className="form-section">
-            <form className="form" onSubmit={e => this.handleSubmit(e)}>
+            <form className="form">
                 <div className="form__item">
                     <div className="label-box">
                         <label className="label" htmlFor="nickname">
@@ -30,7 +54,7 @@ class Form extends React.Component {
                                type="text"
                                id="nickname"
                                placeholder="nickname"
-                               value={this.props.nickname}
+                               value={this.state.nickname}
                                onChange={e => this.handleChange(e, 'nickname')}/>
                     </div>
                 </div>
@@ -45,7 +69,7 @@ class Form extends React.Component {
                                type="text"
                                id="email"
                                placeholder="email"
-                               value={this.props.email}
+                               value={this.state.email}
                                onChange={e => this.handleChange(e, 'email')}/>
                     </div>
                 </div>
@@ -60,12 +84,12 @@ class Form extends React.Component {
                                type="text"
                                id="ip"
                                placeholder="IP address"
-                               value={this.props.ip}
+                               value={this.state.ip}
                                onChange={e => this.handleChange(e, 'ip')}/>
                     </div>
                 </div>
 
-                <button className="btn submit-btn" type="submit" disabled={true}>
+                <button className="btn submit-btn" type="submit" disabled={false}>
                     Add
                 </button>
             </form>
