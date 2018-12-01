@@ -4,11 +4,19 @@ import '../scss/main.scss';
 import {Form} from './components/Form.jsx';
 import {List} from './components/List.jsx';
 
-class App extends React.Component {
+class Main extends React.Component {
     render() {
         return <div>
             <Form />
             <List />
+        </div>
+    }
+}
+
+class App extends React.Component {
+    render() {
+        return <div>
+            <Main />
         </div>
     }
 }
