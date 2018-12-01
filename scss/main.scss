@@ -119,16 +119,17 @@ body {
 }
 
 .list-item__inner {
-  //height: 50px;
   display: flex;
   border: 1px solid #d6d6d6;
   border-top: none;
 }
 
 .item {
-  //line-height: 50px;
   width: 35%;
   padding: 15px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
   &:first-child {
     width: 20%;
@@ -145,6 +146,7 @@ body {
     text-align: center;
     color: #FF0000;
     padding: 8px 6px;
+    justify-content: center;
   }
 }
 
