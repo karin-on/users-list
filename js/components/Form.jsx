@@ -6,7 +6,11 @@ class Form extends React.Component {
         this.state = {
             nickname: '',
             email: '',
-            ip: ''
+            ip: '',
+            nicknameValid: false,
+            emailValid: false,
+            ipValid: false,
+            formValid: false,
         }
     }
 
