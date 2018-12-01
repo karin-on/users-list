@@ -106,14 +106,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35%;
+  width: 30%;
   text-align: center;
 
-  &:first-child {
+  &.list-header__nickname {
     width: 20%;
   }
 
-  &:last-child {
+  &.list-header__delete,
+  &.list-header__joined {
     width: 10%;
   }
 }
@@ -125,22 +126,27 @@ body {
 }
 
 .item {
-  width: 35%;
+  width: 30%;
   padding: 15px 15px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
-  &:first-child {
+  &.item__nickname {
     width: 20%;
     border-right: 1px solid #d6d6d6;
   }
 
-  &:nth-child(2), &:nth-child(3) {
+  &.item__email, &.item__ip-address,
+  &.item__joined {
     border-right: 1px solid #d6d6d6;
   }
 
-  &:last-child {
+  &.item__joined {
+    width: 10%;
+  }
+
+  &.item__delete {
     width: 10%;
     line-height: 1;
     text-align: center;
@@ -150,7 +156,18 @@ body {
   }
 }
 
-.remove-all-btn {
+.delete-btn {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: unset;
+  padding: unset;
+  color: #FF0000;
+  font-family: "Avenir Next", sans-serif;
+}
+
+
+.delete-all-btn {
   background: #ffd1d7;
   color: #fd5353;
   margin-top: 60px;
