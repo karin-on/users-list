@@ -10,7 +10,7 @@ class List extends React.Component {
                     <div className="list-header__item list-header__nickname">nickname</div>
                     <div className="list-header__item list-header__email">email</div>
                     <div className="list-header__item list-header__ip-address">IP address</div>
-                    <div className="list-header__item list-header__delete">delete</div>
+                    <div className="list-header__item list-header__delete">delete user</div>
                 </div>
 
                 <ul className="list__items">
@@ -19,7 +19,7 @@ class List extends React.Component {
                             <div className="item item__nickname">jakiś nickname</div>
                             <div className="item item__email">email@email.ok</div>
                             <div className="item item__ip-address">IP address 4353:43434</div>
-                            <div className="item item__delete">delete user</div>
+                            <div className="item item__delete">delete</div>
 
                         </div>
                     </li>
@@ -28,7 +28,7 @@ class List extends React.Component {
                             <div className="item item__nickname">jakiś nickname</div>
                             <div className="item item__email">email@email.ok</div>
                             <div className="item item__ip-address">IP address 4353:43434</div>
-                            <div className="item item__delete">delete user</div>
+                            <div className="item item__delete">delete</div>
 
                         </div>
                     </li>
@@ -37,7 +37,7 @@ class List extends React.Component {
                             <div className="item item__nickname">jakiś nickname</div>
                             <div className="item item__email">email@email.ok</div>
                             <div className="item item__ip-address">IP address 4353:43434</div>
-                            <div className="item item__delete">delete user</div>
+                            <div className="item item__delete">delete</div>
                         </div>
                     </li>
                 </ul>
