@@ -18,32 +18,30 @@ class Form extends React.Component {
         this.setState({
             [input]: e.target.value
         });
-        this.validateForm(input, e.target.value);
     }
-
-    validateForm = (input, value) => {
-        // e.preventDefault();
-
-        const data = {
-            [input]: value
-        }
-
-
-        console.log(data);
-    }
-
-
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-    //
-    //     if (typeof this.props.validateForm === 'function') {
-    //         this.props.validateForm();
-    //     }
-    // }
 
 
     render() {
-        // console.log(this.state);
+        // (() => {
+        //     console.log(this.state);
+            const emailPattern = /[a-z0-9\.\-\_]+@[a-z0-9\.\-\_]+.[a-z]+/gi;
+            const ipPattern = /[0-9]+/g;
+
+            // let errorMsgNickname = this.state.nickname.length > 0 ?
+            //     '' : 'Please enter your nickname';
+            let errorMsgEmail = (emailPattern.test(this.state.email) || this.state.email.length === 0) ?
+                '' : 'Please enter valid email address';
+            let errorMsgIP = ipPattern.test(this.state.ip) ?
+                '' : 'Please enter valid IP address';
+
+            let formValid = (errorMsgEmail + errorMsgIP === '');
+
+
+        // })();
+            console.log(errorMsgEmail, errorMsgIP);
+
+
+
 
         return <section className="form-section">
             <form className="form">
@@ -93,7 +91,7 @@ class Form extends React.Component {
                     </div>
                 </div>
 
-                <button className="btn submit-btn" type="submit" disabled={false}>
+                <button className="btn submit-btn" type="submit" disabled={!formValid}>
                     Add
                 </button>
             </form>
