@@ -3,6 +3,22 @@ import React from 'react';
 class List extends React.Component {
 
     render() {
+        const usersArray = this.props.users;
+
+        let users = usersArray.map(el => {
+            return <li className="list_item">
+                <div className="list-item__inner">
+                    <div className="item item__nickname">{el.nickname}</div>
+                    <div className="item item__email">{el.email}</div>
+                    <div className="item item__ip-address">{el.ip}</div>
+                    <div className="item item__joined">{el.date}</div>
+                    <div className="item item__delete">
+                        <button className="btn delete-btn">delete</button>
+                    </div>
+                </div>
+            </li>
+        });
+
         return <section className="list-section">
             <div className="list">
                 <div className="list-title">Users</div>
@@ -15,46 +31,15 @@ class List extends React.Component {
                 </div>
 
                 <ul className="list__items">
-                    <li className="list_item">
-                        <div className="list-item__inner">
-                            <div className="item item__nickname">jakiś nickname</div>
-                            <div className="item item__email">email@email.ok</div>
-                            <div className="item item__ip-address">IP address 4353:43434</div>
-                            <div className="item item__joined">[date]</div>
-                            <div className="item item__delete">
-                                <button className="btn delete-btn">delete</button>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li className="list_item">
-                        <div className="list-item__inner">
-                            <div className="item item__nickname">jakiś nickname</div>
-                            <div className="item item__email">email@email.ok</div>
-                            <div className="item item__ip-address">IP address 4353:43434</div>
-                            <div className="item item__joined">[date]</div>
-                            <div className="item item__delete">
-                                <button className="btn delete-btn">delete</button>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li className="list_item">
-                        <div className="list-item__inner">
-                            <div className="item item__nickname">jakiś nickname</div>
-                            <div className="item item__email">email@email.ok</div>
-                            <div className="item item__ip-address">IP address 4353:43434</div>
-                            <div className="item item__joined">[date]</div>
-                            <div className="item item__delete">
-                                <button className="btn delete-btn">delete</button>
-                            </div>
-                        </div>
-                    </li>
+                    {users}
                 </ul>
 
-                <button className="btn delete-all-btn">
-                    Remove list
-                </button>
+                {usersArray.length ?
+                    <button className="btn delete-all-btn">
+                        Remove list
+                    </button>
+                    : null
+                }
 
             </div>
         </section>

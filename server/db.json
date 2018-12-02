@@ -1,5 +1,22 @@
 {
   "users": [
-
+    {
+      "nickname": "moj nickname",
+      "email": "kdjs@ldks.ok",
+      "ip": "123.434.43.43",
+      "date": "12.23.4008"
+    },
+    {
+      "nickname": "moj nickname",
+      "email": "kdjs@ldks.ok",
+      "ip": "123.434.43.43",
+      "date": "12.23.4008"
+    },
+    {
+      "nickname": "moj nickname",
+      "email": "kdjs@ldks.ok",
+      "ip": "123.434.43.43",
+      "date": "12.23.4008"
+    }
   ]
 }
