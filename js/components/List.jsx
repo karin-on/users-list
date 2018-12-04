@@ -5,25 +5,27 @@ class List extends React.Component {
     removeUser = (id) => {
         // console.log(id);
 
-        fetch('http://localhost:3000/users/' + id, {
-            method: 'DELETE',
-        }).then(r => console.log(r))
-            .then(window.location.reload());
+        fetch(`http://localhost:3000/users/${id}`, {
+            method: 'DELETE'
+        }).then(window.location.reload());
     };
 
     removeList = () => {
-        fetch('http://localhost:3000/', {
-            method: 'PUT',
-            body: "users".clear()
-        }).then(r => console.log(r))
-            .then(window.location.reload());
+        console.log('remove all');
+
+        fetch(`http://localhost:3000`, {
+            method: 'DELETE',
+            // headers:{
+            //     'Content-Type': 'application/json'
+            // }
+        }).then(window.location.reload());
     }
 
     render() {
         const usersArray = this.props.users;
-        console.log(usersArray);
+        console.log(usersArray[1]);
 
-        let users = usersArray.map((el) => {
+        let users = usersArray.map(el => {
             return <li className="list_item" key={el.id}>
                 <div className="list-item__inner">
                     <div className="item item__nickname">{el.nickname}</div>

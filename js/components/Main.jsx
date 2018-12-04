@@ -11,7 +11,7 @@ class Main extends React.Component {
             pending: true
         }
     }
-    
+
     loadUsers = () => {
 
         fetch(this.url)
@@ -43,8 +43,6 @@ class Main extends React.Component {
     }
 
     render() {
-        console.log(this.state.usersArray);
-
         return <div>
             <Form addNewUser={this.addNewUser}/>
             <List users={this.state.usersArray}/>
