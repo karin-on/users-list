@@ -42,7 +42,7 @@ class Form extends React.Component {
     render() {
         // (() => {
         //     console.log(this.state);
-            const emailPattern = /[a-z0-9\.\-\_]+@[a-z0-9\.\-\_]+.[a-z]+/gi;
+            const emailPattern = /[a-z0-9\.\-\_]+@[a-z0-9\.\-\_]+\.[a-z]+/gi;
             const ipPattern = /[0-9]+/g;
 
             // let errorMsgNickname = this.state.nickname.length > 0 ?

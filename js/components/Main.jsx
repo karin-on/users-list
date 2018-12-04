@@ -11,8 +11,7 @@ class Main extends React.Component {
             pending: true
         }
     }
-
-
+    
     loadUsers = () => {
 
         fetch(this.url)
@@ -28,12 +27,15 @@ class Main extends React.Component {
     }
 
     addNewUser = (obj) => {
-        console.log(obj);
+        // console.log(obj);
 
         fetch(this.url, {
             method: 'POST',
-            body: JSON.stringify(obj)
-        }).then(r => console.log(r));
+            body: JSON.stringify(obj),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(window.location.reload())
     }
 
     componentDidMount() {
@@ -41,6 +43,8 @@ class Main extends React.Component {
     }
 
     render() {
+        console.log(this.state.usersArray);
+
         return <div>
             <Form addNewUser={this.addNewUser}/>
             <List users={this.state.usersArray}/>

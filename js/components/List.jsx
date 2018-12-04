@@ -3,7 +3,7 @@ import React from 'react';
 class List extends React.Component {
 
     removeUser = (id) => {
-        console.log(id);
+        // console.log(id);
 
         fetch('http://localhost:3000/users/' + id, {
             method: 'DELETE',
@@ -11,11 +11,19 @@ class List extends React.Component {
             .then(window.location.reload());
     };
 
+    removeList = () => {
+        fetch('http://localhost:3000/', {
+            method: 'PUT',
+            body: "users".clear()
+        }).then(r => console.log(r))
+            .then(window.location.reload());
+    }
 
     render() {
         const usersArray = this.props.users;
+        console.log(usersArray);
 
-        let users = usersArray.map((el,i) => {
+        let users = usersArray.map((el) => {
             return <li className="list_item" key={el.id}>
                 <div className="list-item__inner">
                     <div className="item item__nickname">{el.nickname}</div>
@@ -45,7 +53,7 @@ class List extends React.Component {
                 </ul>
 
                 {usersArray.length ?
-                    <button className="btn delete-all-btn">
+                    <button className="btn delete-all-btn" onClick={this.removeList}>
                         Remove list
                     </button>
                     : null
