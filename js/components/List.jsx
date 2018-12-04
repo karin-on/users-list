@@ -23,7 +23,6 @@ class List extends React.Component {
 
     render() {
         const usersArray = this.props.users;
-        console.log(usersArray[1]);
 
         let users = usersArray.map(el => {
             return <li className="list_item" key={el.id}>

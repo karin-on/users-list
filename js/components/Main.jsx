@@ -17,8 +17,6 @@ class Main extends React.Component {
         fetch(this.url)
             .then(r => r.json())
             .then(users => {
-                // console.log(users);
-
                 this.setState({
                     usersArray: users,
                     pending: false
@@ -27,7 +25,6 @@ class Main extends React.Component {
     }
 
     addNewUser = (obj) => {
-        // console.log(obj);
 
         fetch(this.url, {
             method: 'POST',

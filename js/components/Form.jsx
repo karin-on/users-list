@@ -30,18 +30,14 @@ class Form extends React.Component {
             date: Date.now()
         };
 
-        // console.log(newUser);
-
         if (typeof this.props.addNewUser === 'function') {
             this.props.addNewUser(newUser);
         }
-
     };
 
 
     render() {
-        // (() => {
-        //     console.log(this.state);
+
             const emailPattern = /[a-z0-9\.\-\_]+@[a-z0-9\.\-\_]+\.[a-z]+/gi;
             const ipPattern = /[0-9]+/g;
 
@@ -55,7 +51,6 @@ class Form extends React.Component {
             let formValid = (errorMsgEmail + errorMsgIP === '');
 
 
-        // })();
             console.log(errorMsgEmail, errorMsgIP);
 
 
