@@ -10,19 +10,24 @@ class List extends React.Component {
         }).then(window.location.reload());
     };
 
-    removeList = () => {
-        console.log('remove all');
+    removeList = (ids) => {
+        console.log(ids);
 
-        fetch(`http://localhost:3000`, {
-            method: 'DELETE',
-            // headers:{
-            //     'Content-Type': 'application/json'
-            // }
-        }).then(window.location.reload());
+        // ids.forEach(el => {
+        //     fetch(`http://localhost:3000/users/${el}`, {
+        //         method: 'DELETE',
+        //         // headers:{
+        //         //     'Content-Type': 'application/json'
+        //         // }
+        //     })
+        // })
+            // .then(window.location.reload());
     }
 
     render() {
         const usersArray = this.props.users;
+        const usersIDs = usersArray.map(el => el.id);
+        // console.log(usersIDs);
 
         let users = usersArray.map(el => {
             return <li className="list_item" key={el.id}>
@@ -54,7 +59,7 @@ class List extends React.Component {
                 </ul>
 
                 {usersArray.length ?
-                    <button className="btn delete-all-btn" onClick={this.removeList}>
+                    <button className="btn delete-all-btn" onClick={this.removeList(usersIDs)}>
                         Remove list
                     </button>
                     : null
