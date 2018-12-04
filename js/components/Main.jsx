@@ -5,6 +5,7 @@ import {List} from "./List.jsx";
 class Main extends React.Component {
     constructor(props) {
         super(props);
+        this.url = 'http://localhost:3000/users';
         this.state = {
             usersArray: [],
             pending: true
@@ -13,9 +14,8 @@ class Main extends React.Component {
 
 
     loadUsers = () => {
-        const url = 'http://localhost:3000/users';
 
-        fetch(url)
+        fetch(this.url)
             .then(r => r.json())
             .then(users => {
                 // console.log(users);
@@ -27,13 +27,22 @@ class Main extends React.Component {
             })
     }
 
+    addNewUser = (obj) => {
+        console.log(obj);
+
+        fetch(this.url, {
+            method: 'POST',
+            body: JSON.stringify(obj)
+        }).then(r => console.log(r));
+    }
+
     componentDidMount() {
         this.loadUsers();
     }
 
     render() {
         return <div>
-            <Form />
+            <Form addNewUser={this.addNewUser}/>
             <List users={this.state.usersArray}/>
         </div>
     }

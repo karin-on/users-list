@@ -20,6 +20,24 @@ class Form extends React.Component {
         });
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        let newUser = {
+            nickname: this.state.nickname,
+            email: this.state.email,
+            ip: this.state.ip,
+            date: Date.now()
+        };
+
+        // console.log(newUser);
+
+        if (typeof this.props.addNewUser === 'function') {
+            this.props.addNewUser(newUser);
+        }
+
+    };
+
 
     render() {
         // (() => {
@@ -44,7 +62,7 @@ class Form extends React.Component {
 
 
         return <section className="form-section">
-            <form className="form">
+            <form className="form" onSubmit={e => this.handleSubmit(e)}>
                 <div className="form__item">
                     <div className="label-box">
                         <label className="label" htmlFor="nickname">
@@ -91,9 +109,9 @@ class Form extends React.Component {
                     </div>
                 </div>
 
-                <button className="btn submit-btn" type="submit" disabled={!formValid}>
-                    Add
-                </button>
+                <input className="btn submit-btn"
+                        type="submit"
+                        disabled={!formValid} value="Add"/>
             </form>
         </section>
     }
